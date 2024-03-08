@@ -22,6 +22,9 @@ const loginForm = () => {
   usernameInput.className = 'inputs';
   usernameInput.id = 'username';
   form.append(usernameInput);
+  const usernameMessage = document.createElement('p');
+  usernameMessage.className = 'username-message';
+  form.append(usernameMessage);
   const ageLabel = document.createElement('label');
   ageLabel.className = 'age-label';
   ageLabel.for = 'age';
@@ -33,6 +36,9 @@ const loginForm = () => {
   ageInput.type = 'number';
   ageInput.placeholder = 'age';
   form.append(ageInput);
+  const ageMessage = document.createElement('p');
+  ageMessage.className = 'age-message';
+  form.append(ageMessage);
   const passwordLabel = document.createElement('label');
   passwordLabel.for = 'password';
   passwordLabel.innerText = 'Password : ';
@@ -43,6 +49,9 @@ const loginForm = () => {
   passwordInput.type = 'password';
   passwordInput.placeholder = 'password';
   form.append(passwordInput);
+  const passwordMessage = document.createElement('p');
+  passwordMessage.className = 'password-message';
+  form.append(passwordMessage);
   const confirmPasswordLabel = document.createElement('label');
   confirmPasswordLabel.for = 'confirm-password';
   confirmPasswordLabel.innerText = 'Confirm Password : ';
@@ -53,6 +62,9 @@ const loginForm = () => {
   confirmPasswordInput.type = 'password';
   confirmPasswordInput.placeholder = 'confirm password';
   form.append(confirmPasswordInput);
+  const confirmPasswordMessage = document.createElement('p');
+  confirmPasswordMessage.className = 'confirm-password-message';
+  form.append(confirmPasswordMessage);
   const emailLabel = document.createElement('label');
   emailLabel.for = 'email';
   emailLabel.innerText = 'Email : ';
@@ -60,12 +72,16 @@ const loginForm = () => {
   const emailInput = document.createElement('input');
   emailLabel.className = 'inputs';
   emailInput.id = 'email';
-  emailInput.type = 'email';
+  emailInput.type = 'text';
   emailInput.placeholder = 'email';
   form.append(emailInput);
+  const emailMessage = document.createElement('p');
+  emailMessage.className = 'email-message';
+  form.append(emailMessage);
   const submit = document.createElement('input');
   submit.className = 'submit';
   submit.type = 'submit';
   form.append(submit);
+  
 };
 export default loginForm;
