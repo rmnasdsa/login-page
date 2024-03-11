@@ -11,8 +11,17 @@ const operationLogin = () => {
   const confirmPasswordMessage = document.querySelector('.confirm-password-message');
   const email = document.querySelector('#email');
   const emailMessage = document.querySelector('.email-message');
-
+  const submit = document.querySelector('.submit');
+  const form = document.querySelector('#form');
+  const usernameValue = document.querySelector('.username-value');
+  const ageValue = document.querySelector('.age-value');
+ 
+  
+  const searchUrl = () => {
+    window.location = 'http://127.0.0.1:3000/public/index.html' + username.value;
+  }
   username.addEventListener('change', (e) => {
+ 
     if (e.target.value.length < 6) {
       usernameMessage.innerText = 'username must be atleast 6 characters';
       usernameMessage.style.color = 'red';
@@ -21,8 +30,12 @@ const operationLogin = () => {
       usernameMessage.innerText = 'done!';
       usernameMessage.style.color = 'green';
     }
+    //searchUrl();
+    const setValue = (value = e.target.value) => {
+      username.textContent = value;
+    }
   })
-
+  //console.log(name);
   age.addEventListener('change', (e) => {
     if (e.target.value < 12 || e.target.value > 120) {
       ageMessage.innerText = 'you must be 12 years old or your age is incorrect';
@@ -32,6 +45,7 @@ const operationLogin = () => {
       ageMessage.innerText = 'done!';
       ageMessage.style.color = 'green';
     }
+    console.log(username.value);
   })
 
   password.addEventListener('change', (e) => {
@@ -99,7 +113,7 @@ const operationLogin = () => {
         return true;
       }
     });
-    
+
     if (e.target.value.length < 15) {
       emailMessage.innerText = 'invalid email';
       emailMessage.style.color = 'red';
@@ -120,6 +134,15 @@ const operationLogin = () => {
       emailMessage.innerText = 'valid email';
       emailMessage.style.color = 'green';
     }
+  })
+  
+  /*if (username.value) {
+    form.method = 'GET';
+    form.action = 'http://www.google.com';
+  }*/
+  submit.addEventListener('click', () => {
+    usernameValue.innerText = username.value;
+    ageValue.innerText = `${age.value} years old`;
   })
 };
 export default operationLogin;

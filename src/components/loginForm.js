@@ -1,15 +1,17 @@
-import { root } from "../app.js";
+
 const loginForm = () => { 
 
+  const root = document.querySelectorAll('.root');
   const headerTitle = document.createElement('h1');
-  root.append(headerTitle);
+  root[0].append(headerTitle);
   headerTitle.className = 'header-title';
   headerTitle.innerText = 'Login';
   const container = document.createElement('div');
   container.className = 'container';
-  root.append(container);
+  root[0].append(container);
   const form = document.createElement('form');
   form.id = 'form';
+  form.action = '#';
   container.append(form);
   const usernameLabel = document.createElement('label');
   usernameLabel.className = 'username-label';
