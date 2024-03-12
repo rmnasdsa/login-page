@@ -31,11 +31,8 @@ const operationLogin = () => {
       usernameMessage.style.color = 'green';
     }
     //searchUrl();
-    const setValue = (value = e.target.value) => {
-      username.textContent = value;
-    }
   })
-  //console.log(name);
+  
   age.addEventListener('change', (e) => {
     if (e.target.value < 12 || e.target.value > 120) {
       ageMessage.innerText = 'you must be 12 years old or your age is incorrect';
@@ -45,7 +42,7 @@ const operationLogin = () => {
       ageMessage.innerText = 'done!';
       ageMessage.style.color = 'green';
     }
-    console.log(username.value);
+    //console.log(username.value);
   })
 
   password.addEventListener('change', (e) => {
@@ -141,8 +138,10 @@ const operationLogin = () => {
     form.action = 'http://www.google.com';
   }*/
   submit.addEventListener('click', () => {
-    usernameValue.innerText = username.value;
-    ageValue.innerText = `${age.value} years old`;
+    usernameMessage.textContent === 'done!' ? usernameValue.innerText = username.value : usernameValue.innerText = '';
+    age.value ? ageValue.innerText = `${age.value} years old` : null;
   })
+  //console.dir(submit);
+
 };
 export default operationLogin;
